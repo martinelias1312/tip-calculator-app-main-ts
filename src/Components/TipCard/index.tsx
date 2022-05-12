@@ -3,7 +3,7 @@ import CardInputs from "./CardInputs";
 import TipSummary from "./TipSummary";
 
 // style
-import "./index.scss";
+import "../../assets/scss/main.scss";
 
 type Props = {};
 
