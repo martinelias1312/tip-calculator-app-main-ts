@@ -4,7 +4,7 @@ import Header from "../Components/Header";
 import TipCard from "../Components/TipCard";
 
 // style
-import "./index.scss";
+import "../assets/scss/main.scss";
 
 function Layout() {
   return (

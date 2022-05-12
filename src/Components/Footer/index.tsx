@@ -1,7 +1,7 @@
 import React from "react";
 
 // style
-import "./index.scss";
+import "../../assets/scss/main.scss";
 
 type Props = {};
 
