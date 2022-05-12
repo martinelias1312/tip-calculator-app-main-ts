@@ -8,7 +8,9 @@ type Props = {};
 const Header = (props: Props) => {
   return (
     <header>
-      <h1>SPLITTER</h1>
+      <h1>
+        SPLI <p>TTER</p>
+      </h1>
     </header>
   );
 };
