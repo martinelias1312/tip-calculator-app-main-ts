@@ -10,7 +10,7 @@ const CardInputs = (props: Props) => {
     <div className="card-inputs">
       <section className="bill">
         <h2>Bill</h2>
-        <input type="number" />
+        <input type="text" />
       </section>
 
       <section className="tip">
@@ -28,7 +28,7 @@ const CardInputs = (props: Props) => {
       <section className="people">
         <h2>Number of People</h2>
         <p className="msg-zero"></p>
-        <input type="number" />
+        <input type="text" />
       </section>
     </div>
   );
