@@ -33,6 +33,10 @@ h1 {
 }
 
 .card-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+
   h2 {
     font-size: 1.1em;
     margin-bottom: 0.5em;
@@ -46,12 +50,52 @@ button {
   border: none;
   border-radius: 5px;
   min-width: 9em;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    background: $color-Light-grayish-cyan;
+    color: $color-Very-dark-cyan;
+  }
 }
 
+// Bill, People sections inputs
+.bill,
+.people {
+  input {
+    width: 100%;
+    padding: 0.5em 1em;
+    text-align: right;
+    color: $color-Dark-grayish-cyan;
+    border: 2px solid $color-White;
+    border-radius: 5px;
+    background: $color-Very-light-grayish-cyan url(../images/icon-dollar.svg)
+      no-repeat left 1em center;
+
+    &:focus,
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: 2px solid $color-primary-Strong-cyan;
+    }
+  }
+}
+
+.people {
+  input {
+    background: $color-Very-light-grayish-cyan url(../images/icon-person.svg)
+      no-repeat left 1em center;
+  }
+}
+
+/* Tip summary section */
 .tip-summary {
   background: $color-Very-dark-cyan;
   border-radius: 10px;
   padding: 2em 1em 1em 1em;
+  margin-top: 1.5em;
   color: $color-White;
 }
 
