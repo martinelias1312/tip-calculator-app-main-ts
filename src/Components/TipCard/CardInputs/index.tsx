@@ -27,7 +27,7 @@ const CardInputs = (props: Props) => {
 
       <section className="people">
         <h2>Number of People</h2>
-        <p className="msg-zero"></p>
+        <p className="msg-zero sr-only"></p>
         <input type="text" />
       </section>
     </div>
