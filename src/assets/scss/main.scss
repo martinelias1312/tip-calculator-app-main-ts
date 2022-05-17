@@ -1,4 +1,4 @@
-@import url(/assets/css/normalize.css);
+@import "/src/assets/normalize.css";
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
 @import "_variables";
 @import "_general";
@@ -6,9 +6,55 @@
 /*
  *	CONTENT
  ------------------------------------------------------ */
+h2 {
+  margin: 0;
+}
 
 /* Header */
+header {
+  text-align: center;
+  letter-spacing: 0.5em;
+  font-size: 0.8em;
+}
+
+h1 {
+  margin: 1.5em;
+
+  p {
+    margin: 0.3em 0 0 0;
+  }
+}
+
 /* Tip Card */
+.tip-card {
+  background: $color-White;
+  border-radius: 20px;
+  padding: 2em;
+}
+
+.card-inputs {
+  h2 {
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+  }
+}
+
+button {
+  background: $color-Very-dark-cyan;
+  color: $color-White;
+  padding: 1em 0;
+  border: none;
+  border-radius: 5px;
+  min-width: 9em;
+}
+
+.tip-summary {
+  background: $color-Very-dark-cyan;
+  border-radius: 10px;
+  padding: 2em 1em 1em 1em;
+  color: $color-White;
+}
+
 /* Footer */
 .attribution {
   font-size: 11px;
