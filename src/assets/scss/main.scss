@@ -36,6 +36,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 1.5em;
+  padding: 0 0.2em;
 
   h2 {
     font-size: 1.1em;
@@ -46,13 +47,12 @@ h1 {
 button {
   background: $color-Very-dark-cyan;
   color: $color-White;
-  padding: 1em 0;
+  padding: 0.7em 0;
   border: none;
   border-radius: 5px;
-  min-width: 9em;
+  font-size: 1.2em;
 
-  &:hover,
-  &:focus {
+  &:hover {
     cursor: pointer;
     background: $color-Light-grayish-cyan;
     color: $color-Very-dark-cyan;
@@ -90,13 +90,81 @@ button {
   }
 }
 
+/* Percentage buttons grid */
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(1em, 9em));
+  grid-gap: 1em;
+}
+
+/* Custom Tip Input */
+.btn-custom {
+  text-align: right;
+  color: $color-Very-dark-cyan;
+  font-size: 1.4em;
+  padding-right: 0.6em;
+  background: $color-Very-light-grayish-cyan;
+  border: 2px solid $color-White;
+  border-radius: 5px;
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: 2px solid $color-primary-Strong-cyan;
+  }
+}
+
 /* Tip summary section */
 .tip-summary {
+  display: flex;
+  flex-direction: column;
   background: $color-Very-dark-cyan;
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 2em 1em 1em 1em;
   margin-top: 1.5em;
   color: $color-White;
+  gap: 1.4em;
+}
+
+.tip-person,
+.tip-total {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  h2 {
+    font-size: 1em;
+  }
+
+  span {
+    display: block;
+    margin-top: 0.3em;
+    color: $color-Grayish-cyan;
+    font-size: 0.9em;
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: 2em;
+    color: $color-primary-Strong-cyan;
+  }
+}
+
+.btn-reset {
+  width: 100%;
+  color: $color-Very-dark-cyan;
+  background: $color-primary-Strong-cyan;
+  padding: 0.5em 0;
+
+  &:disabled {
+    cursor: auto;
+    background: opacity($color: $color-Very-dark-cyan);
+  }
 }
 
 /* Footer */
