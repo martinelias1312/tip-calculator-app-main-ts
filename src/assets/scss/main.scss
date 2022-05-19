@@ -177,11 +177,14 @@ button {
 
   &:disabled {
     cursor: auto;
-    background: opacity($color: $color-Very-dark-cyan);
   }
 }
 
 /* Footer */
+footer {
+  margin-top: 1em;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -193,3 +196,71 @@ button {
 /*
  *	MEDIA QUERIES
  ------------------------------------------------------ */
+@media screen and (min-width: 535px) {
+  app-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .tip-card {
+    width: 535px;
+  }
+}
+
+@media screen and (min-width: 999px) {
+  app-layout {
+    justify-content: center;
+  }
+
+  .tip-card {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    width: 76%;
+  }
+
+  .card-inputs,
+  .tip-summary {
+    width: 50%;
+  }
+
+  .card-inputs {
+    padding: 0.5em 0.2em;
+    gap: 2.5em;
+  }
+
+  .btn-grid {
+    grid-template-columns: repeat(auto-fill, minmax(1em, 7.5em));
+  }
+
+  .tip-summary {
+    margin: 0;
+    padding: 3em 2.5em;
+  }
+
+  .tip-total {
+    margin-top: 2em;
+  }
+
+  .tip-person p,
+  .tip-total p {
+    font-size: 2.5em;
+  }
+
+  .btn-reset {
+    position: relative;
+    top: 7em;
+  }
+}
+
+@media screen and (min-width: 1179px) {
+  .tip-card {
+    max-width: 897px;
+  }
+
+  .btn-reset {
+    top: 4em;
+  }
+}
