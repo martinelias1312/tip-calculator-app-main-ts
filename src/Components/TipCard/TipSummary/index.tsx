@@ -21,7 +21,9 @@ const TipSummary = (props: Props) => {
         </h2>
         <p className="tip-total-sum">$0.00</p>
       </div>
-      <button className="btn-reset">RESET</button>
+      <button className="btn-reset" disabled>
+        RESET
+      </button>
     </div>
   );
 };
