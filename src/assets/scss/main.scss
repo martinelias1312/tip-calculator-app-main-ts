@@ -39,7 +39,7 @@ h1 {
   padding: 0 0.2em;
 
   h2 {
-    font-size: 1.1em;
+    font-size: 1em;
     margin-bottom: 0.5em;
   }
 }
@@ -88,6 +88,19 @@ button {
     background: $color-Very-light-grayish-cyan url(../images/icon-person.svg)
       no-repeat left 1em center;
   }
+
+  h2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.msg-zero {
+  color: $color-error;
+  margin: 0;
+  font-size: 0.9em;
 }
 
 /* Percentage buttons grid */
