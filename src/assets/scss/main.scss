@@ -101,7 +101,6 @@ button {
   color: $color-error;
   margin: 0;
   font-size: 0.9em;
-  display: none;
 }
 
 /* Percentage buttons grid */
@@ -196,6 +195,10 @@ footer {
 .active {
   background: $color-primary-Strong-cyan;
   color: $color-Very-dark-cyan;
+}
+
+.display {
+  display: none;
 }
 /*
  *	MEDIA QUERIES
