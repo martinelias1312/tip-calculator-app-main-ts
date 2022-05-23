@@ -193,6 +193,10 @@ footer {
   color: hsl(228, 45%, 44%);
 }
 
+.active {
+  background: $color-primary-Strong-cyan;
+  color: $color-Very-dark-cyan;
+}
 /*
  *	MEDIA QUERIES
  ------------------------------------------------------ */
