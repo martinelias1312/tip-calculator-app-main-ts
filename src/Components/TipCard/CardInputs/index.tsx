@@ -3,34 +3,40 @@ import React, { MouseEvent, ChangeEvent, useRef } from "react";
 // style
 import "../../../assets/scss/main.scss";
 
-type Props = {};
+type Props = {
+  data: {
+    tip?: string;
+    bill?: string;
+    people?: string;
+  };
+};
 
 const CardInputs = (props: Props) => {
   const billInput = useRef<HTMLInputElement>(null);
   const peopleInput = useRef<HTMLInputElement>(null);
   const customInput = useRef<HTMLInputElement>(null);
 
-  let data: any = {};
+  const { data } = props;
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
     let errorMsg = document.querySelector(".msg-zero");
-    let bill = billInput.current?.value;
-    let custom = customInput.current?.value;
-    let people = peopleInput.current?.value;
+    let billCurrent = billInput.current?.value;
+    let customCurrent = customInput.current?.value;
+    let peopleCurrent = peopleInput.current?.value;
 
     // condition if people input gets 0 number, then error message will show
-    people === "0"
+    peopleCurrent === "0"
       ? errorMsg?.classList.remove("display")
       : errorMsg?.classList.add("display");
 
     // reset tip in data object
     if (customInput.current === e.currentTarget) {
-      data["tip"] = custom;
+      data.tip = customCurrent;
     }
 
     // setting current values to data object
-    data["bill"] = bill;
-    data["people"] = people;
+    data.bill = billCurrent;
+    data.people = peopleCurrent;
   };
 
   const handleClick = (e: MouseEvent) => {
@@ -53,9 +59,9 @@ const CardInputs = (props: Props) => {
       // removing % from button text
       let tip = e.currentTarget.innerHTML.split("");
       tip[e.currentTarget.innerHTML.length - 1] = "";
-      data["tip"] = tip.join("");
+      data.tip = tip.join("");
     } else {
-      data["tip"] = customInput.current?.value;
+      data.tip = customInput.current?.value;
     }
   };
 
