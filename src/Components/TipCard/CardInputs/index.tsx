@@ -3,20 +3,15 @@ import React, { MouseEvent, ChangeEvent, useRef } from "react";
 // style
 import "../../../assets/scss/main.scss";
 
-type Props = {
-  data: {
-    tip?: string;
-    bill?: string;
-    people?: string;
-  };
-};
+type Props = {};
 
 const CardInputs = (props: Props) => {
+  // refs
   const billInput = useRef<HTMLInputElement>(null);
   const peopleInput = useRef<HTMLInputElement>(null);
   const customInput = useRef<HTMLInputElement>(null);
 
-  const { data } = props;
+  let data: any = {};
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
     let errorMsg = document.querySelector(".msg-zero");
@@ -64,7 +59,6 @@ const CardInputs = (props: Props) => {
       data.tip = customInput.current?.value;
     }
   };
-
   return (
     <div className="card-inputs">
       <section className="bill">
