@@ -3,7 +3,9 @@ import React from "react";
 // style
 import "../../../assets/scss/main.scss";
 
-type Props = {};
+type Props = {
+  data: {};
+};
 
 const TipSummary = (props: Props) => {
   return (

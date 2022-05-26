@@ -10,8 +10,8 @@ type Props = {};
 const TipCard = (props: Props) => {
   return (
     <main className="tip-card">
-      <CardInputs />
-      <TipSummary />
+      <CardInputs data="" />
+      <TipSummary data="" />
     </main>
   );
 };
