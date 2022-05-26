@@ -4,7 +4,11 @@ import React from "react";
 import "../../../assets/scss/main.scss";
 
 type Props = {
-  data: {};
+  data: {
+    tip?: string;
+    bill?: string;
+    people?: string;
+  };
 };
 
 const TipSummary = (props: Props) => {
