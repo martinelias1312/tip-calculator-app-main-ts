@@ -3,13 +3,7 @@ import React from "react";
 // style
 import "../../../assets/scss/main.scss";
 
-type Props = {
-  data: {
-    tip?: string;
-    bill?: string;
-    people?: string;
-  };
-};
+type Props = {};
 
 const TipSummary = (props: Props) => {
   return (
