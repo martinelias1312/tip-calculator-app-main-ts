@@ -14,6 +14,7 @@ const TipCard = (props: Props) => {
   // state
   const [bill, setBill] = useState("");
   const [tip, setTip] = useState("");
+  const [people, setPeople] = useState("");
 
   const handleBillChange = (data: string) => {
     setBill(data);
@@ -23,6 +24,10 @@ const TipCard = (props: Props) => {
     setTip(data);
   };
 
+  const handlePeopleChange = (data: string) => {
+    setPeople(data);
+  };
+
   // template
   return (
     <main className="tip-card">
@@ -30,8 +35,10 @@ const TipCard = (props: Props) => {
         onBillChange={handleBillChange}
         bill={bill}
         onTipChange={handleTipChange}
+        people={people}
+        onPeopleChange={handlePeopleChange}
       />
-      <TipSummary bill={+bill} tip={+tip} />
+      <TipSummary bill={+bill} tip={+tip} people={+people} />
     </main>
   );
 };

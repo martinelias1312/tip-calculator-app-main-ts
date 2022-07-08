@@ -7,14 +7,17 @@ type Props = {
   bill: string;
   onBillChange: (data: string) => void;
   onTipChange: (data: string) => void;
+  people: string;
+  onPeopleChange: (data: string) => void;
 };
 
 const CardInputs = (props: Props) => {
   // props destructuring
-  const { bill, onBillChange, onTipChange } = props;
+  const { bill, onBillChange, onTipChange, people, onPeopleChange } = props;
 
   // selectors
   let buttons = document.querySelectorAll(".tipBtn");
+  let zeroMsg = document.querySelector(".msg-zero");
 
   // bill input handler
   const handleBillChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -36,6 +39,14 @@ const CardInputs = (props: Props) => {
 
     // add active class to selected button
     (e.target as HTMLButtonElement).classList.add("active");
+  };
+
+  // people input handler
+  const handlePeopleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    onPeopleChange(e.target.value);
+    if (e.target.value === "0") {
+      zeroMsg?.classList.remove("display");
+    }
   };
 
   return (
@@ -81,7 +92,12 @@ const CardInputs = (props: Props) => {
         <h2>
           Number of People<p className="msg-zero display">Can´t be zero</p>
         </h2>
-        <input type="text" placeholder="0" />
+        <input
+          type="text"
+          placeholder="0"
+          onChange={handlePeopleChange}
+          value={people}
+        />
       </section>
     </div>
   );
