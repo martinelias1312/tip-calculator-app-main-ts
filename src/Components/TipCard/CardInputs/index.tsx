@@ -17,6 +17,7 @@ const CardInputs = (props: Props) => {
 
   // selectors
   let buttons = document.querySelectorAll(".tipBtn");
+  let btnCustom = document.querySelector(".btn-custom") as HTMLInputElement;
   let zeroMsg = document.querySelector(".msg-zero");
 
   // bill input handler
@@ -39,6 +40,9 @@ const CardInputs = (props: Props) => {
 
     // add active class to selected button
     (e.target as HTMLButtonElement).classList.add("active");
+
+    // reset value in btn-custom after click on another button
+    btnCustom.value = "";
   };
 
   // people input handler
@@ -46,7 +50,7 @@ const CardInputs = (props: Props) => {
     onPeopleChange(e.target.value);
     if (e.target.value === "0") {
       zeroMsg?.classList.remove("display");
-    }
+    } else zeroMsg?.classList.add("display");
   };
 
   return (
