@@ -173,10 +173,6 @@ button {
   color: $color-Very-dark-cyan;
   background: $color-primary-Strong-cyan;
   padding: 0.5em 0;
-
-  &:disabled {
-    cursor: auto;
-  }
 }
 
 /* Footer */
@@ -199,6 +195,18 @@ footer {
 
 .display {
   display: none;
+}
+
+.disabled {
+  color: hsla(183.1, 100%, 15.1%, 0.38);
+  background: hsla(171.8, 67%, 45.1%, 0.31);
+  pointer-events: none;
+
+  &:hover {
+    background: hsla(171.8, 67%, 45.1%, 0.31);
+    color: hsla(183.1, 100%, 15.1%, 0.38);
+    cursor: auto;
+  }
 }
 /*
  *	MEDIA QUERIES
