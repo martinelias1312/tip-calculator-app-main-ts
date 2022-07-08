@@ -41,9 +41,7 @@ const TipSummary = (props: Props) => {
           ).toFixed(2)}
         </p>
       </div>
-      <button className="btn-reset" disabled>
-        RESET
-      </button>
+      <button className="btn-reset disabled">RESET</button>
     </div>
   );
 };
