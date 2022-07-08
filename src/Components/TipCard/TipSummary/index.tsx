@@ -3,16 +3,20 @@ import React from "react";
 // style
 import "../../../assets/scss/main.scss";
 
-type Props = {};
+type Props = {
+  bill: number;
+};
 
 const TipSummary = (props: Props) => {
+  const { bill } = props;
+
   return (
     <div className="tip-summary">
       <div className="tip-person">
         <h2 className="tip-person-heading">
           Tip Amount<span>/ person</span>
         </h2>
-        <p className="tip-person-sum">$0.00</p>
+        <p className="tip-person-sum">${bill.toFixed(2)}</p>
       </div>
 
       <div className="tip-total">
