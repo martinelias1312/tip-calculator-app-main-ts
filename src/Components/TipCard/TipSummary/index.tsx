@@ -6,10 +6,13 @@ import "../../../assets/scss/main.scss";
 type Props = {
   bill: number;
   tip: number;
+  people: number;
 };
 
 const TipSummary = (props: Props) => {
-  const { bill, tip } = props;
+  const { bill, tip, people } = props;
+
+  let personTip = (bill * (tip / 100)) / people;
 
   return (
     <div className="tip-summary">
@@ -17,7 +20,7 @@ const TipSummary = (props: Props) => {
         <h2 className="tip-person-heading">
           Tip Amount<span>/ person</span>
         </h2>
-        <p className="tip-person-sum">${(bill / tip).toFixed(2)}</p>
+        <p className="tip-person-sum">${personTip.toFixed(2)}</p>
       </div>
 
       <div className="tip-total">
