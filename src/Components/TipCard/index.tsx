@@ -13,16 +13,25 @@ type Props = {};
 const TipCard = (props: Props) => {
   // state
   const [bill, setBill] = useState("");
+  const [tip, setTip] = useState("");
 
   const handleBillChange = (data: string) => {
     setBill(data);
   };
 
+  const handleTipChange = (data: string) => {
+    setTip(data);
+  };
+
   // template
   return (
     <main className="tip-card">
-      <CardInputs onBillChange={handleBillChange} bill={bill} />
-      <TipSummary bill={+bill} />
+      <CardInputs
+        onBillChange={handleBillChange}
+        bill={bill}
+        onTipChange={handleTipChange}
+      />
+      <TipSummary bill={+bill} tip={+tip} />
     </main>
   );
 };
