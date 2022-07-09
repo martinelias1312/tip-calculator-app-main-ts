@@ -1,6 +1,5 @@
 import React, { ChangeEvent, MouseEvent } from "react";
 
-
 // style
 import "../../../assets/scss/main.scss";
 
@@ -87,7 +86,7 @@ const CardInputs = (props: Props) => {
   const styleCheck = (reset: boolean) => {
     if (!reset) {
       buttons.forEach((btn) => btn.classList.remove("active"));
-
+      zeroMsg?.classList.add("display");
       // checking if btnCustom value is defined or not
       if (btnCustom === null) {
         return;
@@ -98,7 +97,7 @@ const CardInputs = (props: Props) => {
   };
 
   styleCheck(reset);
-  
+
   return (
     <div className="card-inputs">
       <section className="bill">
