@@ -9,11 +9,21 @@ type Props = {
   onTipChange: (data: string) => void;
   people: string;
   onPeopleChange: (data: string) => void;
+  reset: boolean;
+  onResetChange: (data: boolean) => void;
 };
 
 const CardInputs = (props: Props) => {
   // props destructuring
-  const { bill, onBillChange, onTipChange, people, onPeopleChange } = props;
+  const {
+    bill,
+    onBillChange,
+    onTipChange,
+    people,
+    onPeopleChange,
+    reset,
+    onResetChange,
+  } = props;
 
   // selectors
   let buttons = document.querySelectorAll(".tipBtn");
@@ -23,12 +33,20 @@ const CardInputs = (props: Props) => {
   // bill input handler
   const handleBillChange = (e: ChangeEvent<HTMLInputElement>) => {
     onBillChange(e.target.value);
+
+    if (e.target.value !== "") {
+      onResetChange(true);
+    } else onResetChange(false);
   };
 
   // tip input handler
   const handleTipChange = (e: ChangeEvent<HTMLInputElement>) => {
     onTipChange(e.target.value);
     buttons.forEach((btn) => btn.classList.remove("active"));
+
+    if (e.target.value !== "") {
+      onResetChange(true);
+    } else onResetChange(false);
   };
 
   // tip buttons handler
@@ -41,8 +59,10 @@ const CardInputs = (props: Props) => {
     // add active class to selected button
     (e.target as HTMLButtonElement).classList.add("active");
 
-    // reset value in btn-custom after click on another button
-    btnCustom.value = "";
+    // reset btn-custom value after click on another button
+    if (btnCustom.value !== "") {
+      btnCustom.value = "";
+    }
   };
 
   // people input handler
@@ -51,7 +71,27 @@ const CardInputs = (props: Props) => {
     if (e.target.value === "0") {
       zeroMsg?.classList.remove("display");
     } else zeroMsg?.classList.add("display");
+
+    if (e.target.value !== "") {
+      onResetChange(true);
+    } else onResetChange(false);
   };
+
+  // function which removes active class from buttons when reset is false
+  const styleCheck = (reset: boolean) => {
+    if (!reset) {
+      buttons.forEach((btn) => btn.classList.remove("active"));
+
+      // checking if btnCustom value is defined or not
+      if (btnCustom === null) {
+        return;
+      } else if (btnCustom.value !== "" && btnCustom !== null) {
+        btnCustom.value = "";
+      } else return;
+    } else return;
+  };
+
+  styleCheck(reset);
 
   return (
     <div className="card-inputs">
