@@ -9,7 +9,7 @@ const Header = (props: Props) => {
   return (
     <header>
       <h1>
-        SPLI <p>TTER</p>
+        SPLI <br>TTER</br>
       </h1>
     </header>
   );
