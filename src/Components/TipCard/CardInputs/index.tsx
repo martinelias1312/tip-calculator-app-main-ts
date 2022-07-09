@@ -140,9 +140,9 @@ const CardInputs = (props: Props) => {
       <section className="people">
         <h2>
           Number of People
-          <div className={`msg-zero ${reset ? "" : "display"}`}>
+          <span className={`msg-zero ${reset ? "" : "display"}`}>
             Can´t be zero
-          </div>
+          </span>
         </h2>
         <input
           type="text"
