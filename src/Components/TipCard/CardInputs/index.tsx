@@ -34,7 +34,7 @@ const CardInputs = (props: Props) => {
   const handleBillChange = (e: ChangeEvent<HTMLInputElement>) => {
     onBillChange(e.target.value);
 
-    if (e.target.value !== "") {
+    if (e.target.value !== "" || people !== "") {
       onResetChange(true);
     } else onResetChange(false);
   };
@@ -44,7 +44,7 @@ const CardInputs = (props: Props) => {
     onTipChange(e.target.value);
     buttons.forEach((btn) => btn.classList.remove("active"));
 
-    if (e.target.value !== "") {
+    if (e.target.value !== "" || people !== "" || bill !== "") {
       onResetChange(true);
     } else onResetChange(false);
   };
@@ -52,7 +52,6 @@ const CardInputs = (props: Props) => {
   // tip buttons handler
   const handleTipClickChange = (e: MouseEvent<HTMLButtonElement>) => {
     onTipChange((e.target as HTMLButtonElement).value);
-
     // remove active class from all buttons
     buttons.forEach((btn) => btn.classList.remove("active"));
 
@@ -60,19 +59,25 @@ const CardInputs = (props: Props) => {
     (e.target as HTMLButtonElement).classList.add("active");
 
     // reset btn-custom value after click on another button
-    if (btnCustom.value !== "") {
+    if (btnCustom === null) {
+    } else if (btnCustom.value !== "") {
       btnCustom.value = "";
     }
+
+    if ((e.target as HTMLButtonElement).value !== "") {
+      onResetChange(true);
+    } else onResetChange(false);
   };
 
   // people input handler
   const handlePeopleChange = (e: ChangeEvent<HTMLInputElement>) => {
     onPeopleChange(e.target.value);
+
     if (e.target.value === "0") {
       zeroMsg?.classList.remove("display");
     } else zeroMsg?.classList.add("display");
 
-    if (e.target.value !== "") {
+    if (e.target.value !== "" || bill !== "" || btnCustom.value) {
       onResetChange(true);
     } else onResetChange(false);
   };
