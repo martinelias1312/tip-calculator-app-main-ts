@@ -26,7 +26,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![screenshots/375px.png](screenshots/375px.png)
+![screenshots/1440px.png](screenshots/1440px.png)
 
 ### Links
 
@@ -58,4 +59,4 @@ I´ll continue to become better working with React.
 ## Author
 
 - Frontend Mentor - [@martinelias1312](https://www.frontendmentor.io/profile/martinelias1312)
-- LinkedIn - [@martinelias](https://www.linkedin.com/in/martin-eli%C3%A1%C5%A1-455550209/)
+- LinkedIn - [@MartinEliáš](https://www.linkedin.com/in/martin-eli%C3%A1%C5%A1-455550209/)
