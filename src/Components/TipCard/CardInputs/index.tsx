@@ -1,5 +1,6 @@
 import React, { ChangeEvent, MouseEvent } from "react";
 
+
 // style
 import "../../../assets/scss/main.scss";
 
@@ -97,7 +98,7 @@ const CardInputs = (props: Props) => {
   };
 
   styleCheck(reset);
-
+  
   return (
     <div className="card-inputs">
       <section className="bill">
