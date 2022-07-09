@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/tip-calculator-with-react-4Q5JBFo-pi](https://www.frontendmentor.io/solutions/tip-calculator-with-react-4Q5JBFo-pi)
 - Live Site URL: [https://tip-calculator-app-main-ts.vercel.app/](https://tip-calculator-app-main-ts.vercel.app/)
 
 ## My process
