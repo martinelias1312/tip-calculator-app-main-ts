@@ -15,6 +15,7 @@ const TipCard = (props: Props) => {
   const [bill, setBill] = useState("");
   const [tip, setTip] = useState("");
   const [people, setPeople] = useState("");
+  const [reset, setReset] = useState(false);
 
   const handleBillChange = (data: string) => {
     setBill(data);
@@ -28,6 +29,16 @@ const TipCard = (props: Props) => {
     setPeople(data);
   };
 
+  const handleResetChange = (data: boolean) => {
+    setReset(data);
+  };
+
+  const handleResetClick = () => {
+    setBill("");
+    setTip("");
+    setPeople("");
+  };
+
   // template
   return (
     <main className="tip-card">
@@ -37,8 +48,17 @@ const TipCard = (props: Props) => {
         onTipChange={handleTipChange}
         people={people}
         onPeopleChange={handlePeopleChange}
+        onResetChange={handleResetChange}
+        reset={reset}
       />
-      <TipSummary bill={+bill} tip={+tip} people={+people} />
+      <TipSummary
+        bill={+bill}
+        tip={+tip}
+        people={+people}
+        onResetChange={handleResetChange}
+        reset={reset}
+        onResetClick={handleResetClick}
+      />
     </main>
   );
 };
