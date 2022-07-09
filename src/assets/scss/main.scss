@@ -66,7 +66,7 @@ button {
     width: 100%;
     padding: 0.5em 1em;
     text-align: right;
-    color: $color-Dark-grayish-cyan;
+    color: $color-Very-dark-cyan;
     border: 2px solid $color-White;
     border-radius: 5px;
     background: $color-Very-light-grayish-cyan url(../images/icon-dollar.svg)
@@ -101,7 +101,6 @@ button {
   color: $color-error;
   margin: 0;
   font-size: 0.9em;
-  display: none;
 }
 
 /* Percentage buttons grid */
@@ -174,10 +173,6 @@ button {
   color: $color-Very-dark-cyan;
   background: $color-primary-Strong-cyan;
   padding: 0.5em 0;
-
-  &:disabled {
-    cursor: auto;
-  }
 }
 
 /* Footer */
@@ -193,6 +188,26 @@ footer {
   color: hsl(228, 45%, 44%);
 }
 
+.active {
+  background: $color-primary-Strong-cyan;
+  color: $color-Very-dark-cyan;
+}
+
+.display {
+  display: none;
+}
+
+.disabled {
+  color: hsla(183.1, 100%, 15.1%, 0.38);
+  background: hsla(171.8, 67%, 45.1%, 0.31);
+  pointer-events: none;
+
+  &:hover {
+    background: hsla(171.8, 67%, 45.1%, 0.31);
+    color: hsla(183.1, 100%, 15.1%, 0.38);
+    cursor: auto;
+  }
+}
 /*
  *	MEDIA QUERIES
  ------------------------------------------------------ */
